@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+  {{ if .Params.thumbnail }}
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img style="max-width: 80%; margin: auto;" src="{{ .Params.thumbnail }}" class="rounded-lg shadow-lg w-full object-contain" title="{{ .Params.hovertitle }}"/>
+    <div style="right:8rem;" class="absolute top-4 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      {{ .Params.date.Format "January 2, 2006" }}
+    </div>
+  </div>
+  {{ end }}
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold">{{ .Title }}</h1>
+    {{ if .Params.author }}
+    <span style="vertical-align: middle; display:inline-block; font-size:0">
+      <svg class="stroke-current text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </span>
+    <span style="vertical-align: middle; display:inline-block">
+      <p><strong>{{ .Params.author }}</strong></p>
+    </span>
+    {{ end }}
+
+    {{ .Content }}
+    
+    {{ template "_internal/disqus.html" . }}
+  </article>
+
+  {{- partial "social.html" . -}}
+{{ end }}
