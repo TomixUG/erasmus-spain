@@ -36,9 +36,9 @@ googleAnalytics = "G-B3GGKQLF6R"
   photoDark = "/erasmus-logo.png"
   photoLight = "/erasmus-logo.png"
 
-[[menu.main]]
-  name = "About"
-  url = "/about"
+#[[menu.main]]
+#  name = "About"
+#  url = "/about"
 
 [build]
   writeStats = true

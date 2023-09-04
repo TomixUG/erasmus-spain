@@ -12,7 +12,17 @@
     <li><a href="{{ .URL }}">{{ .Name }}</a></li>
     {{ end }} {{ range .Site.Sections }}
     <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-    {{ end }} {{ if .Site.Params.enableSearch }}
+    {{ end }}
+
+    <li>
+      <a
+        href="https://instagram.com/osiem_chuopaku?igshid=YmMyMTA2M2Y="
+        target="_blank"
+        >Instagram</a
+      >
+    </li>
+
+    {{ if .Site.Params.enableSearch }}
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg
